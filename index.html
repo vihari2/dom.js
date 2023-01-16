@@ -11,17 +11,33 @@
       <button id="fale">Fale comigo!</button>
     </div>
     <ul class="lista">
-       </ul>
+    </ul>
+    <button id="pagar">Pagar Agora! 
+    </button>
     <script>
       const button = document.querySelector("#fale");
 
-    button.addEventListener("click", faleComigo);
+      button.addEventListener("click", faleComigo);
 
-    function faleComigo() {
-    const divContato = document.querySelector(".contato");
+      function faleComigo() {
+      const divContato = document.querySelector(".contato");
 
-    divContato.innerText = "Olá pessoa, deu certo!";
-    }
+      divContato.innerText = "Olá pessoa, deu certo!";
+      }
 
+      let filaAtendimento = ["Vanessa", "Vinicius", "Ligia", "Maria", "Pedro", "Gustavo", "Sueli", "Nelson"]
+      const lista = document.querySelector(".lista")
+      for(let i = 0; i < filaAtendimento.length; i++) {
+        const item = document.createElement("li")
+        item.innerText = filaAtendimento[i]
+        lista.appendChild(item)
+      }
+      const button1 = document.querySelector("#pagar");
+      button1.addEventListener('click', pagar);
+      function pagar() {
+        button1.innerText = "Pagando...."
+      }
+      button1.innerText = "Bora Pagar"
+      button1.style.background = "red";
   </script>
 </html>
